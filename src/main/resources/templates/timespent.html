@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js}" type="text/javascript" ></script>
+</head>
+<body>
+<p th:text="'Total Time Spent For Each Activity'" />
+<canvas id="myDoughnutChart" width="50" height="50"></canvas>
+<script th:inline="javascript">
+    var ctx = document.getElementById('myDoughnutChart').getContext('2d');
+    var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Time Walking',
+                'Time Running',
+                'Time Cycling',
+                'Time Transport',
+                'Time Other'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [ [[${TimeWalking}]], [[${TimeRunning}]], [[${TimeCycling}]], [[${TimeTransport}]], [[${TimeOther}]]],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(0, 205, 86)',
+                    'rgb(255, 0, 0)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+
+    });
+
+
+        </script>
+
+    </body>
+</html>

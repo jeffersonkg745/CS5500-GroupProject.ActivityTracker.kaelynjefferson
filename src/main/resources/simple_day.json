@@ -1,0 +1,21 @@
+[ {
+  "date" : "20130209",
+  "summary" : null,
+  "segments" : [ {
+    "type" : "place",
+    "startTime" : "20130209T063407-0800",
+    "endTime" : "20130209T132707-0800",
+    "place" : {
+      "id" : 6552482,
+      "name" : "Home",
+      "type" : "home",
+      "location" : {
+        "lat" : 47.67645,
+        "lon" : -122.32305
+      }
+    },
+    "lastUpdate" : "20140801T025223Z"
+  }],
+  "caloriesIdle" : 1439,
+  "lastUpdate" : "20150402T225557Z"
+}]

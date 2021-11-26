@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js}" type="text/javascript" ></script>
+</head>
+<body>
+<p th:text="'Average calories burned for each activity'" />
+<canvas id="myLineChart" width="50" height="50"></canvas>
+<script th:inline="javascript">
+    var ctx = document.getElementById('myLineChart').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [
+                'Walking',
+                'Running',
+                'Cycling',
+                'Cross-country skiing',
+                'Kayaking'
+            ],
+            datasets: [{
+                label: 'Avg Calories Burned',
+                data: [ [[${CaloriesWalking}]], [[${CaloriesRunning}]], [[${CaloriesCycling}]], [[${CaloriesCrossCountrySkiing}]], [[${CaloriesKayaking}]]],
+                fill: false,
+                borderColor: 'rgb(75, 192, 0)',
+                tension: 0.1
+            }]
+        },
+
+    });
+
+
+</script>
+
+
+
+
+</body>
+</html>
